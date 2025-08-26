@@ -24,3 +24,9 @@ D) 🌐 Responsive Design
 Mobile-friendly interface
 Optimized for performance across devices
 
+TECH STACK
+
+1) HTML5 – Structure and semantic layout
+2) CSS3 – Styling and responsive design (Flexbox/Grid)
+3) JavaScript (Vanilla) – Dynamic functionality and DOM manipulation
+4) LocalStorage – Store event data without a database
