@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management System</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Event Management System</h1>
+        <form id="eventForm">
+            <label for="eventName">Event Name:</label>
+            <input type="text" id="eventName" name="eventName" required>
+            
+            <label for="eventDate">Event Date:</label>
+            <input type="date" id="eventDate" name="eventDate" required>
+            
+            <label for="eventDescription">Event Description:</label>
+            <textarea id="eventDescription" name="eventDescription" required></textarea>
+
+            <label for="organiser">Organiser Category:</label><br>
+            <label for="faculty">Faculty</label>
+            <input type="radio" id="faculty" name="organiser" value="Faculty" required>
+            <label for="student">Student</label>
+            <input type="radio" id="student" name="organiser" value="Student" required>
+
+            <label for="organiserName">Organiser Name:</label>
+            <input type="text" id="organiserName" name="organiserName" required>
+            
+            <label for="organiserEmail">Organiser Email:</label>
+            <input type="email" id="organiserEmail" name="organiserEmail" required>
+
+            <label for="organiserContact">Organiser Contact No.:</label>
+            <input type="tel" id="organiserContact" name="organiserContact" required pattern="[0-9]{10}">
+
+            <label for="department">Department:</label>
+            <input type="text" id="department" name="department" required>
+            
+            <button type="submit">Save Event Details</button>
+        </form>
+        <div id="message"></div>
+    </div>
+
+    <!-- Include SMTPJS library for sending emails -->
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        // Function to validate email format
+        function validateEmail(email) {
+            const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            return regex.test(email);
+        }
+
+        // Handle form submission
+        document.getElementById("eventForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission to handle via JS
+
+            const eventName = document.getElementById("eventName").value.trim();
+            const eventDate = document.getElementById("eventDate").value;
+            const eventDescription = document.getElementById("eventDescription").value.trim();
+            const organiserCategory = document.querySelector('input[name="organiser"]:checked');
+            const organiserName = document.getElementById("organiserName").value.trim();
+            const organiserEmail = document.getElementById("organiserEmail").value.trim();
+            const organiserContact = document.getElementById("organiserContact").value.trim();
+            const department = document.getElementById("department").value.trim();
+
+            // Basic validation
+            if (!eventName || !eventDate || !eventDescription || !organiserCategory || !organiserName || !organiserEmail || !organiserContact || !department) {
+                document.getElementById("message").innerHTML = "<p style='color: red;'>Please fill out all fields before submitting the form.</p>";
+                return;
+            }
+
+            if (!validateEmail(organiserEmail)) {
+                document.getElementById("message").innerHTML = "<p style='color: red;'>Please enter a valid email address.</p>";
+                return;
+            }
+
+            if (!/^\d{10}$/.test(organiserContact)) {
+                document.getElementById("message").innerHTML = "<p style='color: red;'>Please enter a valid 10-digit contact number.</p>";
+                return;
+            }
+
+            // Prepare event data for email
+            const emailSubject = `Event Registration: ${eventName}`;
+            const emailBody = `
+                Event Name: ${eventName}
+                Event Date: ${eventDate}
+                Description: ${eventDescription}
+                Organiser: ${organiserName}
+                Organiser Category: ${organiserCategory.value}
+                Contact: ${organiserContact}
+                Department: ${department}
+            `;
+
+            // Send email using SMTPJS
+            Email.send({
+                Host: "smtp.elasticemail.com",
+                Username: "akritic206@gmail.com", // Secure your credentials
+                Password: "7DA51850EA6DB947CC6861DE0EBFD491B619", // Secure your credentials
+                To: "akritic206@gmail.com",
+                From: "onlymasumz8s@gmail.com",
+                Subject: emailSubject,
+                Body: emailBody
+            }).then(
+                message => {
+                    document.getElementById("message").innerHTML = "<p style='color: green;'>Event registered successfully!</p>";
+                    document.getElementById("eventForm").reset(); // Reset the form after success
+                }
+            ).catch(error => {
+                document.getElementById("message").innerHTML = "<p style='color: red;'>Error sending email. Please try again.</p>";
+            });
+        });
+
+        // Reset message div on any input field change
+        const inputFields = document.querySelectorAll("input, textarea");
+        inputFields.forEach(function (field) {
+            field.addEventListener("input", function () {
+                document.getElementById("message").style.display = "none"; // Hide message when the user starts typing again
+            });
+        });
+    </script>
+    <!-- <script src="script.js"></script> -->
+</body>
+</html>

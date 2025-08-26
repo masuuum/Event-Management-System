@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management System</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Event Management System</h1>
+        <form id="eventForm">
+            <label for="eventName">Event Name:</label>
+            <input type="text" id="eventName" name="eventName" required>
+            
+            <label for="eventDate">Event Date:</label>
+            <input type="date" id="eventDate" name="eventDate" required>
+            
+            <label for="eventDescription">Event Description:</label>
+            <textarea id="eventDescription" name="eventDescription" required></textarea>
+
+            <label for="organiser">Organiser Category</label><br>
+
+            <label for="faculty">Faculty</label>
+            <input type="radio" id="faculty" name="organiser" value="Faculty">
+
+            <label for="student">Student</label>
+            <input type="radio" id="student" name="organiser" value="Student">
+
+            <label for="organiserName">Organiser Name:</label>
+            <input type="text" id="organiserName" name="organiserName" required>
+            
+            <label for="organiserEmail">Organiser Email</label>
+            <input type="text" id="organiserEmail" name="organiserEmail" required>
+
+            <label for="organiserContact">Organiser Contact no.:</label>
+            <input type="text" id="organiserContact" name="organiserContact" required>
+
+            <label for="department">Department</label>
+            <input type="text" id="department" name="department" required>
+            
+            <button type="submit" onclick="SendEmail()">Save Event Details</button>
+        </form>
+        <div id="message"></div>
+        <script src="https://smtpjs.com/v3/smtp.js">
+        </script>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

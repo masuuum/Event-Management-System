@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FESTIFY</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/f9f84ff661.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header id="header-body">
+        <nav>
+            <img src="logo.jpg" alt="Logo" class="navbar-logo">
+            <ul class="navbar">
+                <li><a href="#">Home</a></li>
+                <li> <a href="#about">About</a></li>
+                <li><a href="#register">Register</a></li>
+                <li> <a href="events.html">Events</a></li>
+                <li> <a href="#contact us">Contact Us</a></li>
+                <li><a href="#details">Details</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="text-center">
+                <div class="name">
+                    <h1 class="myname"><b>FESTIFY</b></h1><br>
+                    <h2>Where Events Meet Excitement</h2><br>
+                    <p>Welcome to FESTIFY: Where events meet Excitement.We aim to provide a user-friendly, efficient, and all-encompassing platform that streamlines the event management process, allowing you to focus on what truly matters - creating memorable and impactful events.
+                    </p>
+                </div>
+            </div>
+            <div>
+                <img src="main.png" alt="">
+            </div>
+        </section>
+
+        <section id="register">
+            <div class="container">
+                <h1 class="section-heading mb75px">
+                    <span>
+                        <i class="fas fa-address-card"></i>
+                    </span>
+                    <span> Register </span>
+                </h1>
+                <div class="container">
+                    <h5>To register an Event click below</h5>
+                    <form id="eventform">
+                        <button type="submit"><a href="public/index1.html">click here</a></button>
+                    </form>
+                </div>
+             </div>
+        </section>
+            
+        <section id="events">   
+            <h1 class="section-heading mb75px">  
+            <div class="upcomingevents">
+                    <span>Upcoming Events</span>
+                <div class="events-container">
+                    <!-- Event Card 1 -->
+                    <div class="event-card">
+                        <h2 class="event-title">TechFest 2024</h2>
+                        <p class="event-date"><strong>Date:</strong> March 15, 2024</p>
+                        <p class="event-description">
+                            A technology festival showcasing innovative projects, guest lectures, and coding competitions.
+                        </p>
+                        <p class="event-organizer"><strong>Organizer:</strong> John Doe (Faculty)</p>
+                    </div>
+                    <!-- Event Card 2 -->
+                    <div class="event-card">
+                        <h2 class="event-title">Cultural Night</h2>
+                        <p class="event-date"><strong>Date:</strong> April 5, 2024</p>
+                        <p class="event-description">
+                            A night filled with music, dance, and theatrical performances by students from all departments.
+                        </p>
+                        <p class="event-organizer"><strong>Organizer:</strong> Jane Smith (Student)</p>
+                    </div>
+                    <!-- Event Card 3 -->
+                    <div class="event-card">
+                        <h2 class="event-title">Sports Meet</h2>
+                        <p class="event-date"><strong>Date:</strong> May 20, 2024</p>
+                        <p class="event-description">
+                            A day dedicated to various sports competitions and physical activities to promote fitness.
+                        </p>
+                        <p class="event-organizer"><strong>Organizer:</strong> Athletic Committee</p>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+        
+        <section id="user-reviews">
+            <h1 class="section-heading mb75px">
+                    <span>
+                        <i class="fas fa-envelope"></i>
+                    </span>
+                    <span>User Reviews</span>
+                </h1>
+                <div id="reviews-container">
+                    <div class="review-card">
+                        <p>"An amazing platform! Organizing events has never been easier."</p>
+                        <h3>- John Doe</h3>
+                    </div>
+                    <div class="review-card">
+                        <p>"I loved the user-friendly design and seamless experience."</p>
+                        <h3>- Jane Smith</h3>
+                    </div>
+                    <div class="review-card">
+                        <p>"FESTIFY is a game-changer for campus events management."</p>
+                        <h3>- Michael Lee</h3>
+                    </div>
+                </div>
+        </section>
+            
+        <section id="contact-us">
+            <h1 class="section-heading mb50px">
+                <span>
+                    <i class="far fa-address-card"></i>
+                </span>
+                <span> Contact Us </span>
+            </h1>
+        
+            <div id="contact-us-form-container">
+                <form id="contact-us-form">
+                    <input id="input-name" name="name" type="text" placeholder="Your Name" />
+                    <input id="input-email" name="input-email" type="text" required placeholder="Your Email" />
+                    <input id="text" name="text" type="text" required placeholder="Enter Subject" />
+                    <textarea id="input-message" name="input-message" rows="2" cols="40" placeholder="Message"></textarea>
+                    <button class="sub-btn" type="submit">SEND MESSAGE</button>
+                </form>
+            </div>
+        </section>
+        
+        <section id="details">
+            <div>   
+                <div id="details-container">
+                    <h3>For queries mail us at </h3>
+                    <div class="details-info-container">
+                        <i class="fas fa-envelope"></i>
+                        <span><a href="mailto:festify.org@gmail.com">festify.org@gmail.com </a></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

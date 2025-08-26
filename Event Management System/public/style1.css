@@ -1,0 +1,145 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+/* Container Styles */
+.container {
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Heading Styles */
+h1 {
+    text-align: center;
+    color: #2575fc;
+    margin-bottom: 30px;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Input Field Styles */
+label {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+input[type="text"],
+input[type="date"],
+textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+textarea:focus {
+    border: 1px solid #2575fc;
+    outline: none;
+}
+
+/* Radio Button Styles */
+input[type="radio"] {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+/* Button Styles */
+button {
+    padding: 12px 20px;
+    background-color: #2575fc;
+    color: #fff;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #1f65d1;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* Section Spacing */
+textarea {
+    resize: vertical;
+}
+
+textarea:focus {
+    border: 1px solid #2575fc;
+}
+
+label + input[type="radio"] {
+    margin-left: 20px;
+}
+
+label + textarea {
+    margin-left: 20px;
+}
+
+/* Form Field Styling */
+form > div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+/* Message Display */
+#message {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.2em;
+    color: #2575fc;
+}
+
+/* Form Field Spacing */
+form label, form input, form textarea, form button {
+    width: 100%;
+}
+
+/* Small Screen Responsiveness */
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    button {
+        font-size: 1em;
+        padding: 10px 15px;
+    }
+}
